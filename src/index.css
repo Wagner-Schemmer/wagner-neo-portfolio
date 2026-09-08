@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-paper text-ink font-mono; }
+.grid-bg {
+  background-image: linear-gradient(#00000008 1px, transparent 1px),
+    linear-gradient(90deg, #00000008 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.text-outline {
+  -webkit-text-stroke: 2px #0a0a0a;
+  color: transparent;
+}
+.dark-outline {
+  -webkit-text-stroke: 2px #fff;
+  color: transparent;
+}
