@@ -1,26 +1,31 @@
 # WAGNER.exe — NeoBrutalist Portfolio
 
-Base: Arham43-ops/NeoBrutalist (HTML estático, Tailwind CDN).
-Adaptado para Wagner Schemmer Martins.
+Base: Arham43-ops/NeoBrutalist, adaptado para Wagner Schemmer Martins.
+Estrutura profissional separada (sem monolito, sem React).
 
-## Rodar (Go Live funciona!)
-Projeto é HTML estático — pode usar o botão Go Live do VSCode.
-Ou: `npx serve .` → http://localhost:3000
-
-## Editar
-- Tudo em `index.html` (seções: about, skills, experience, coding-stats, projects, reports, contact)
-- Fotos em `Assets/images/` (troque `img.jpg` pela sua)
-- CV em `Assets/Resume/` (troque o PDF)
-
-## Deploy
-```bash
-vercel --prod
-# ou arrasta a pasta no netlify drop
+```
+wagner-neo-portfolio/
+├── index.html            # markup + seções (about/skills/experience/stats/projects/reports/contact)
+├── css/
+│   ├── variables.css     # tokens (cores neo-*, sombras)
+│   ├── components.css    # cursor, marquee, cards, animações
+│   └── style.css         # base body + grid
+├── js/
+│   ├── tailwind.config.js # paleta + font + shadows (Tailwind CDN)
+│   ├── cursor.js          # cursor custom difference
+│   ├── github-stats.js    # fetch GitHub/LeetCode → TROCAR username
+│   └── ui.js              # reveal on scroll + progress bar
+└── Assets/
+    ├── images/            # TROCAR img.jpg pela sua foto
+    └── Resume/            # TROCAR CV em PDF
 ```
 
-## TODO seu
-- [ ] Trocar foto `Assets/images/img.jpg`
-- [ ] Trocar CV `Assets/Resume/`
-- [ ] Atualizar links GitHub/LinkedIn
-- [ ] Atualizar projects com seus 3 ia-income
-- [ ] Trocar coding-stats (GitHub/LeetCode) pelos seus números
+## Rodar
+Go Live no VSCode (index.html) ou `npx serve .`
+
+## Personalizar
+1. `Assets/images/img.jpg` → sua foto
+2. `Assets/Resume/` → seu CV
+3. `js/github-stats.js` → troca `arham43-ops` pelo seu `Wagner-Schemmer`
+4. Seção projects no `index.html` → seus 3 ia-income
+5. Cores em `css/variables.css` + `js/tailwind.config.js` (mantém sincronizado)
