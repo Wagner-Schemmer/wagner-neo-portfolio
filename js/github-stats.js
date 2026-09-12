@@ -1,7 +1,7 @@
 // GitHub API Integration
 async function fetchGitHubStats() {
     try {
-        const response = await fetch('https://api.github.com/users/wagner43-ops', {
+        const response = await fetch('https://api.github.com/users/Wagner-Schemmer', {
             headers: {
                 'Accept': 'application/vnd.github.v3+json'
             }
@@ -43,7 +43,7 @@ async function fetchGitHubStats() {
         document.getElementById('created-at').textContent = 'N/A';
         const contribElement = document.getElementById('total-contributions');
         if (contribElement) {
-            contribElement.textContent = 'API Error';
+            contribElement.textContent = 'Erro de API';
         }
     }
 }
@@ -51,7 +51,7 @@ async function fetchGitHubStats() {
 // Fetch GitHub Badges dynamically
 async function fetchGitHubBadges() {
     try {
-        const username = 'wagner43-ops';
+        const username = 'Wagner-Schemmer';
         const response = await fetch(`https://api.github.com/users/${username}`);
         if (!response.ok) throw new Error('GH API Error');
         const data = await response.json();
@@ -61,17 +61,17 @@ async function fetchGitHubBadges() {
         const historyContainer = document.getElementById('gh-history-badges');
 
         if (statusEl) {
-            statusEl.textContent = 'Loaded';
+            statusEl.textContent = 'Carregado';
             statusEl.classList.remove('animate-pulse', 'text-neo-yellow');
             statusEl.classList.add('text-neo-green');
         }
 
         // Simulate "Highest Rank" based on follower/repo logic
         if (activeContainer) {
-            let rankTitle = 'Open Sourcer';
+            let rankTitle = 'Código Aberto';
             let iconClass = 'ri-git-repository-fill';
             if (data.followers > 20) {
-                rankTitle = 'Star Developer';
+                rankTitle = 'Dev Destaque';
                 iconClass = 'ri-star-smile-fill';
             }
 
@@ -111,7 +111,7 @@ async function fetchGitHubBadges() {
         console.error('Error fetching GH badges:', error);
         const statusEl = document.getElementById('gh-badges-status');
         if (statusEl) {
-            statusEl.textContent = 'Failed';
+            statusEl.textContent = 'Falhou';
             statusEl.className = 'text-neo-red text-[9px] font-mono uppercase tracking-widest';
         }
     }
@@ -124,7 +124,7 @@ fetchGitHubBadges();
 // Fetch LeetCode Badges
 async function fetchLeetCodeBadges() {
     try {
-        const username = 'wagner43-ops';
+        const username = 'SEU_USUARIO_LEETCODE';
         const response = await fetch(`https://alfa-leetcode-api.onrender.com/${username}/badges`);
         if (!response.ok) throw new Error('API Error');
         const data = await response.json();
@@ -134,7 +134,7 @@ async function fetchLeetCodeBadges() {
         const historyContainer = document.getElementById('lc-history-badges');
 
         if (statusEl) {
-            statusEl.textContent = 'Loaded';
+            statusEl.textContent = 'Carregado';
             statusEl.classList.remove('animate-pulse', 'text-neo-yellow');
             statusEl.classList.add('text-neo-green');
         }
@@ -187,7 +187,7 @@ async function fetchLeetCodeBadges() {
         console.error('Error fetching LeetCode badges:', error);
         const statusEl = document.getElementById('lc-badges-status');
         if (statusEl) {
-            statusEl.textContent = 'Loaded'; // Pretend it loaded so layout still looks nice
+            statusEl.textContent = 'Carregado'; // Pretend it loaded so layout still looks nice
             statusEl.classList.remove('animate-pulse', 'text-neo-yellow', 'text-neo-red');
             statusEl.classList.add('text-neo-orange');
         }
