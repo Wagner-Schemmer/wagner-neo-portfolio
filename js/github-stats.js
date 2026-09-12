@@ -223,3 +223,45 @@ async function fetchLeetCodeBadges() {
 }
 
 fetchLeetCodeBadges();
+
+// Heatmap próprio (tema escuro) a partir da API pública de eventos
+async function fetchContribHeatmap() {
+    const box = document.getElementById('contrib-heatmap');
+    if (!box) return;
+    try {
+        const res = await fetch('https://api.github.com/users/Wagner-Schemmer/events/public?per_page=100');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const events = await res.json();
+        const byDay = {};
+        events.forEach(e => {
+            if (e.type !== 'PushEvent') return;
+            const day = (e.created_at || '').slice(0, 10);
+            const n = (e.payload && e.payload.commits && e.payload.commits.length) || 1;
+            byDay[day] = (byDay[day] || 0) + n;
+        });
+        const WEEKS = 26, CELL = 12, GAP = 3;
+        const today = new Date();
+        const start = new Date(today);
+        start.setDate(start.getDate() - (WEEKS * 7 + today.getDay()) - 1);
+        const colors = ['#161b22', '#0e4429', '#006d32', '#26a641', '#33FF57'];
+        const level = (n) => n === 0 ? 0 : n <= 2 ? 1 : n <= 5 ? 2 : n <= 9 ? 3 : 4;
+        let cells = '';
+        for (let w = 0; w < WEEKS; w++) {
+            for (let d = 0; d < 7; d++) {
+                const dt = new Date(start);
+                dt.setDate(dt.getDate() + w * 7 + d);
+                const key = dt.toISOString().slice(0, 10);
+                const n = dt > today ? -1 : (byDay[key] || 0);
+                if (n < 0) continue;
+                const x = w * (CELL + GAP), y = d * (CELL + GAP);
+                cells += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="2" fill="${colors[level(n)]}"><title>${key}: ${n} commits</title></rect>`;
+            }
+        }
+        const W = WEEKS * (CELL + GAP), H = 7 * (CELL + GAP);
+        box.innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="w-full h-auto" role="img" aria-label="Mapa de atividade do GitHub">${cells}</svg>`;
+    } catch (e) {
+        box.innerHTML = '<p class="font-mono text-xs text-gray-500">Falha ao carregar atividade.</p>';
+    }
+}
+
+fetchContribHeatmap();
