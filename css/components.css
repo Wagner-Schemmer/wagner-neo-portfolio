@@ -8,6 +8,18 @@
             cursor: none;
         }
         #cursor {
+            display: none;
+            width: 28px;
+            height: 28px;
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: 50%;
+            opacity: 0;
+        }
+        html.custom-cursor #cursor {
+            display: block;
+        }
+        #cursor {
             pointer-events: none;
             position: fixed;
             z-index: 9999;

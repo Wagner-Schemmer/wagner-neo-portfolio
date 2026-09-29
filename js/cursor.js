@@ -1,12 +1,18 @@
 // Custom Cursor Logic — only on precise pointers + large screens (where #cursor is visible).
 // The native cursor stays visible everywhere else, so it never disappears.
-if (window.matchMedia('(pointer: fine) and (min-width: 1024px)').matches) {
-    document.documentElement.classList.add('custom-cursor');
+function cursorOK() {
+    return window.matchMedia('(pointer: fine) and (min-width: 1024px)').matches;
 }
+function syncCursorMode() {
+    document.documentElement.classList.toggle('custom-cursor', cursorOK());
+}
+syncCursorMode();
+window.addEventListener('resize', syncCursorMode);
 const cursor = document.getElementById('cursor');
 const hoverElements = document.querySelectorAll('.cursor-hover, a, button, input, textarea');
 
 document.addEventListener('mousemove', (e) => {
+    cursor.style.opacity = '1';
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
     cursor.style.transform = `translate(-50%, -50%)`;
@@ -22,10 +28,10 @@ hoverElements.forEach(el => {
         cursor.style.border = '2px solid black';
     });
     el.addEventListener('mouseleave', () => {
-        cursor.style.width = '24px';
-        cursor.style.height = '24px';
+        cursor.style.width = '28px';
+        cursor.style.height = '28px';
         cursor.style.backgroundColor = '#fff';
         cursor.style.mixBlendMode = 'difference';
-        cursor.style.border = 'none';
+        cursor.style.border = '2px solid black';
     });
 });
