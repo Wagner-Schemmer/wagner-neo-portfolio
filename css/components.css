@@ -1,12 +1,5 @@
-/* Custom Cursor — native cursor is hidden only under html.custom-cursor,
-   so the mouse never disappears if JS fails or on touch screens */
-        html.custom-cursor body,
-        html.custom-cursor a,
-        html.custom-cursor button,
-        html.custom-cursor input,
-        html.custom-cursor textarea {
-            cursor: none;
-        }
+/* Custom Cursor — decorative ring that FOLLOWS the native cursor.
+   The native cursor is NEVER hidden, so the pointer always works. */
         #cursor {
             display: none;
             width: 28px;

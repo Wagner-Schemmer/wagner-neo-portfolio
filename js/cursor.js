@@ -1,23 +1,11 @@
-// Custom Cursor Logic — only on precise pointers + large screens (where #cursor is visible).
-// The native cursor stays visible everywhere else, so it never disappears.
-function cursorOK() {
-    return window.matchMedia('(pointer: fine) and (min-width: 1024px)').matches;
-}
-function syncCursorMode() {
-    document.documentElement.classList.toggle('custom-cursor', cursorOK());
-}
+// Custom Cursor — decorative ring follower. Native cursor ALWAYS visible.
+// (The old logic hid the native pointer and some PCs failed to paint the
+// replacement, leaving no cursor at all. Never again.)
+function syncCursorMode() {}
+function cursorOK() { return false; }
 syncCursorMode();
 window.addEventListener('resize', syncCursorMode);
-// DIAGNÓSTICO TEMPORÁRIO — remover após descobrir o bug
-const dbg = document.createElement('div');
-dbg.style.cssText = 'position:fixed;left:8px;bottom:8px;z-index:10000;background:#000;color:#0f0;font:12px monospace;padding:6px 10px;border-radius:8px;pointer-events:none';
-document.body.appendChild(dbg);
 let mx = -1, my = -1;
-setInterval(() => {
-    dbg.textContent = 'custom:' + document.documentElement.classList.contains('custom-cursor')
-        + ' fine:' + window.matchMedia('(pointer: fine)').matches
-        + ' w:' + window.innerWidth + ' mouse:' + mx + ',' + my;
-}, 500);
 const cursor = document.getElementById('cursor');
 const hoverElements = document.querySelectorAll('.cursor-hover, a, button, input, textarea');
 
