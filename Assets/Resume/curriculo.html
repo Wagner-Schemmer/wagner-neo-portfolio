@@ -4,82 +4,81 @@
 <meta charset="UTF-8">
 <title>CV — Wagner Schemmer Martins</title>
 <style>
-  @page { size: A4; margin: 14mm 15mm; }
+  @page { size: A4; margin: 12mm 13mm; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', Arial, Helvetica, sans-serif; color: #1a1a1a; font-size: 11pt; line-height: 1.45; }
-  header { border-bottom: 3px solid #111; padding-bottom: 10px; margin-bottom: 12px; }
-  h1 { font-size: 24pt; letter-spacing: .5px; }
-  .role { font-size: 12pt; color: #444; font-weight: 600; margin: 2px 0 6px; }
-  .contacts { font-size: 9.5pt; color: #333; }
-  .contacts a { color: #1a56db; text-decoration: none; }
-  h2 { font-size: 12pt; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1.5px solid #111; margin: 14px 0 6px; padding-bottom: 2px; }
-  p, li { font-size: 10.5pt; }
-  ul { margin-left: 18px; }
-  li { margin-bottom: 3px; }
-  .item { margin-bottom: 8px; }
-  .item .top { display: flex; justify-content: space-between; font-weight: 700; }
-  .item .sub { color: #444; font-size: 10pt; }
-  .tags { font-size: 10pt; color: #333; }
-  strong.hl { background: #fff3bf; padding: 0 2px; }
+  body { font-family: Arial, Helvetica, sans-serif; color: #1a1a1a; font-size: 10pt; line-height: 1.42; }
+  h1 { font-size: 26pt; letter-spacing: .5px; }
+  .cargo { font-size: 13pt; font-weight: 700; margin-bottom: 8px; }
+  .cols { display: flex; gap: 22px; }
+  .main { flex: 1.65; }
+  .side { flex: 1; border-left: 2px solid #1e1bb8; padding-left: 14px; }
+  h2 { font-size: 11pt; color: #1e1bb8; text-transform: uppercase; letter-spacing: .5px; margin: 12px 0 5px; }
+  p, li { font-size: 9.8pt; }
+  ul { margin-left: 15px; } li { margin-bottom: 2px; }
+  .exp { margin-bottom: 9px; }
+  .exp b.cli { display: block; font-size: 10.5pt; }
+  .tec { font-size: 9.5pt; margin-top: 2px; }
+  .side p { margin-bottom: 3px; font-size: 9.5pt; }
+  .side a { color: #1a56db; text-decoration: none; }
+  .side h2:first-child { margin-top: 0; }
 </style>
 </head>
 <body>
-<header>
-  <h1>Wagner Schemmer Martins</h1>
-  <div class="role">Desenvolvedor Full Stack Jr &middot; Help Desk &middot; IoT</div>
-  <div class="contacts">
-    Taquaruçu do Sul, RS &middot; (55) 99730-2586 &middot; wagner.schemmer.martins1@gmail.com<br>
-    <a href="https://wagner-port.vercel.app">wagner-port.vercel.app</a> &middot;
-    <a href="https://github.com/Wagner-Schemmer">github.com/Wagner-Schemmer</a> &middot;
-    <a href="https://www.linkedin.com/in/wagner-schemmer-martins-46950627a">linkedin.com/in/wagner-schemmer-martins</a>
-  </div>
-</header>
+<h1>WAGNER SCHEMMER MARTINS</h1>
+<div class="cargo">Desenvolvedor Full Stack Jr</div>
+<div class="cols">
+<div class="main">
+<h2>Sobre</h2>
+<p>Desenvolvedor apaixonado por transformar ideias em produtos no ar, do banco de dados ao deploy. Domínio em <strong>JavaScript, HTML/CSS, Supabase e Vercel</strong>, com projetos em produção usados por clientes reais. Vivência de 3 anos em suporte e infraestrutura, que me deu base sólida em redes, Linux e resolução de problemas sob pressão. Estudo segurança ofensiva (HTB Academy) e entrego código limpo, testado e publicado.</p>
 
-<h2>Resumo</h2>
-<p>Técnico em Informática (IFFar, 2025) e graduando em ADS, com 3 anos de vivência em suporte ao usuário, manutenção de computadores e redes. Desenvolvo <strong>sites e sistemas completos publicados em produção</strong> (Vercel + Supabase) e projetos IoT com ESP8266. Estudo segurança ofensiva (HTB Academy) e entrego do código ao deploy.</p>
-
-<h2>Projetos em produção</h2>
-<div class="item">
-  <div class="top"><span>Aulas de Matemática da Bárbara — site institucional p/ cliente real</span><span>2026</span></div>
-  <div class="sub">barbara-matematica.vercel.app · HTML/CSS/JS + Supabase (mural realtime, painel admin, 10 corações)</div>
+<h2>Experiências</h2>
+<div class="exp">
+<b class="cli">Site institucional — Bárbara, professora de matemática (cliente real)</b>
+Desenvolvedor Full Stack &middot; 2026 — <a href="https://barbara-matematica.vercel.app">barbara-matematica.vercel.app</a><br>
+Levantei requisitos com a cliente e publiquei site responsivo com mural de depoimentos em tempo real, painel administrativo com login (ela edita preços, foto e modera recados sozinha) e deploy contínuo. Resultado: presença digital profissional que gera agendamentos pelo WhatsApp.
+<p class="tec"><strong>Tecnologias:</strong> HTML, CSS, JavaScript, Supabase (Auth, Postgres, Storage, Realtime), Vercel</p>
 </div>
-<div class="item">
-  <div class="top"><span>RebanhoVivo — coleira inteligente p/ gado leiteiro (site + backend + firmware)</span><span>2026</span></div>
-  <div class="sub">Site estático + API Node.js/MQTT/TimescaleDB/Docker + firmware ESP8266 + MPU6050</div>
+<div class="exp">
+<b class="cli">RebanhoVivo — monitoramento de gado leiteiro via IoT (projeto próprio)</b>
+Desenvolvedor Full Stack + Firmware &middot; 2026<br>
+Sistema completo: site com dashboard, API de ingestão e alertas, e firmware em ESP8266 com acelerômetro enviando telemetria via MQTT. Subida com 1 comando Docker; dados em TimescaleDB prontos para modelo de ML.
+<p class="tec"><strong>Tecnologias:</strong> Node.js, MQTT, TimescaleDB, Docker, C++/Arduino, HTML/CSS/JS</p>
 </div>
-<div class="item">
-  <div class="top"><span>Sentinela Cyber — senhas fortes e anti-phishing</span><span>2026</span></div>
-  <div class="sub">sentinela-cyber.vercel.app · entropia, HIBP k-anonymity, WebCrypto, 100% local</div>
+<div class="exp">
+<b class="cli">Sentinela Cyber + Kit do Dia — web apps publicados (projetos próprios)</b>
+Desenvolvedor Front-end &middot; 2026 — sentinela-cyber.vercel.app · kit-do-dia.vercel.app<br>
+Dois apps 100% no navegador: analisador de senhas com consulta HaveIBeenPwned e gerador WebCrypto; central de produtividade com Pomodoro, cotação viva e PWA instalável.
+<p class="tec"><strong>Tecnologias:</strong> JavaScript, WebCrypto, PWA, localStorage, APIs REST</p>
 </div>
-<div class="item">
-  <div class="top"><span>Kit do Dia — produtividade (pomodoro, tarefas, conversores, notas)</span><span>2026</span></div>
-  <div class="sub">kit-do-dia.vercel.app · PWA, cotação viva, localStorage</div>
+<div class="exp">
+<b class="cli">Suporte ao usuário e manutenção — Help Desk</b>
+Técnico de suporte &middot; 2022 — 2025<br>
+Atendimento a usuários, manutenção de computadores e redes; robótica educacional (robôs de sumô), que desenvolveu trabalho em equipe e diagnóstico de falhas complexas.
+<p class="tec"><strong>Tecnologias:</strong> Windows/Linux, redes, hardware</p>
 </div>
-
-<h2>Experiência</h2>
-<div class="item">
-  <div class="top"><span>Desenvolvedor Full Stack — autônomo / projetos próprios</span><span>2025 — atual</span></div>
-  <ul>
-    <li>Sites institucionais e web apps do front ao deploy (GitHub + Vercel).</li>
-    <li>Back-ends com REST, MQTT, Postgres/TimescaleDB e autenticação.</li>
-  </ul>
 </div>
-<div class="item">
-  <div class="top"><span>Suporte ao usuário (Help Desk) e manutenção</span><span>2022 — 2025</span></div>
-  <ul>
-    <li>Atendimento, manutenção de computadores e redes; robótica educacional (robôs de sumô).</li>
-  </ul>
-</div>
-
+<div class="side">
+<h2>Links para contato</h2>
+<p>Portfólio: <a href="https://wagner-port.vercel.app">wagner-port.vercel.app</a></p>
+<p>GitHub: <a href="https://github.com/Wagner-Schemmer">Wagner-Schemmer</a></p>
+<p>LinkedIn: <a href="https://www.linkedin.com/in/wagner-schemmer-martins-46950627a">wagner-schemmer-martins</a></p>
+<p>Contato: +55 55 99730-2586</p>
+<p>Email: wagner.schemmer.martins1@gmail.com</p>
+<p>Taquaruçu do Sul, RS</p>
+<h2>Tecnologias</h2>
+<p>JavaScript &middot; HTML &middot; CSS &middot; Python &middot; Java &middot; PHP &middot; React &middot; Next.js &middot; Tailwind &middot; Node.js &middot; Supabase &middot; Postgres/MySQL &middot; Docker &middot; MQTT &middot; Git &middot; Linux &middot; Vercel &middot; Stripe</p>
+<h2>Soft skills</h2>
+<p>Comunicação eficaz &middot; Resolução de problemas &middot; Trabalho em equipe &middot; Adaptabilidade &middot; Aprendizado contínuo</p>
 <h2>Educação</h2>
-<ul>
-  <li><strong>Análise e Desenvolvimento de Sistemas</strong> — IFFar (cursando, 1º semestre, 2026)</li>
-  <li><strong>Técnico em Informática</strong> — IFFar FW (2025)</li>
-  <li><strong>PHP do Zero à Maestria</strong> — Udemy (2025) · <strong>Formação Front-end</strong> — Udemy (2024)</li>
-  <li><strong>Cybersecurity</strong> — HTB Academy (em andamento)</li>
-</ul>
-
-<h2>Habilidades</h2>
-<p class="tags"><strong>Linguagens:</strong> Python, Java, JavaScript, HTML, CSS, PHP &middot; <strong>Frameworks:</strong> React, Next.js, Tailwind &middot; <strong>Dados:</strong> MySQL, Postgres/TimescaleDB, Supabase &middot; <strong>DevOps:</strong> Git/GitHub, Docker, Vercel, Linux &middot; <strong>Outros:</strong> MQTT/IoT (ESP8266), REST, Stripe &middot; <strong>Idiomas:</strong> Português fluente, inglês básico</p>
+<p><strong>ADS</strong> — IFFar<br>Início 2026 — cursando</p>
+<p><strong>Técnico em Informática</strong> — IFFar FW<br>Concluído 2025</p>
+<p><strong>PHP do Zero à Maestria</strong> — Udemy<br>2025</p>
+<p><strong>Formação Front-end</strong> — Udemy<br>2024</p>
+<p><strong>Cybersecurity</strong> — HTB Academy<br>Em andamento</p>
+<h2>Idiomas</h2>
+<p>Português — Nativo</p>
+<p>Inglês — Básico</p>
+</div>
+</div>
 </body>
 </html>
