@@ -9,7 +9,7 @@
             border-radius: 50%;
             opacity: 0;
         }
-        html.custom-cursor #cursor {
+        html.js-cursor #cursor {
             display: block;
         }
         #cursor {

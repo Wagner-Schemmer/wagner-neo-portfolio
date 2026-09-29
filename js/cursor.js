@@ -3,6 +3,7 @@
 // replacement, leaving no cursor at all. Never again.)
 function syncCursorMode() {}
 function cursorOK() { return false; }
+document.documentElement.classList.add('js-cursor');
 syncCursorMode();
 window.addEventListener('resize', syncCursorMode);
 let mx = -1, my = -1;
