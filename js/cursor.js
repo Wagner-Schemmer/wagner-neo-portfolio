@@ -1,4 +1,8 @@
-// Custom Cursor Logic
+// Custom Cursor Logic — only on precise pointers + large screens (where #cursor is visible).
+// The native cursor stays visible everywhere else, so it never disappears.
+if (window.matchMedia('(pointer: fine) and (min-width: 1024px)').matches) {
+    document.documentElement.classList.add('custom-cursor');
+}
 const cursor = document.getElementById('cursor');
 const hoverElements = document.querySelectorAll('.cursor-hover, a, button, input, textarea');
 

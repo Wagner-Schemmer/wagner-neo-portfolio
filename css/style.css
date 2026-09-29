@@ -1,7 +1,6 @@
 /* Base Styles */
         body {
-            cursor: none;
-            /* We use a custom cursor */
+            /* Native cursor hidden ONLY when the JS custom cursor is active (see cursor.js) */
             background-color: #FFFDF5;
             background-image:
                 radial-gradient(#000 1px, transparent 1px),
