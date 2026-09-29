@@ -24,14 +24,12 @@ hoverElements.forEach(el => {
         cursor.style.width = '60px';
         cursor.style.height = '60px';
         cursor.style.backgroundColor = '#FBFF48'; // Neo Yellow
-        cursor.style.mixBlendMode = 'normal';
         cursor.style.border = '2px solid black';
     });
     el.addEventListener('mouseleave', () => {
         cursor.style.width = '28px';
         cursor.style.height = '28px';
         cursor.style.backgroundColor = '#fff';
-        cursor.style.mixBlendMode = 'difference';
         cursor.style.border = '2px solid black';
     });
 });

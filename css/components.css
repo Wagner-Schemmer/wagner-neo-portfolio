@@ -23,7 +23,6 @@
             pointer-events: none;
             position: fixed;
             z-index: 9999;
-            mix-blend-mode: difference;
             transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.1s;
         }
 
