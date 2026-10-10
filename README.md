@@ -1,5 +1,9 @@
 # WAGNER.exe — NeoBrutalist Portfolio
 
+[![Live](https://img.shields.io/badge/demo-ao_vivo-4ade80?style=for-the-badge&logo=vercel&logoColor=white)](https://wagner-port.vercel.app)
+![Tailwind](https://img.shields.io/badge/Tailwind-CDN-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+![JS](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+
 Base: Arham43-ops/NeoBrutalist, adaptado para Wagner Schemmer Martins.
 Estrutura profissional separada (sem monolito, sem React).
 
