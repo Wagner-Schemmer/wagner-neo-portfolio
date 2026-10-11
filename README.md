@@ -44,10 +44,6 @@ npx serve .          # ou Go Live no VSCode
   <img src="https://skillicons.dev/icons?i=html,css,js,py,git,vercel,vscode&theme=dark" alt="stack" />
 </div>
 
-## UPTIME (star history)
-
-<a href="https://www.star-history.com/#Wagner-Schemmer/wagner-neo-portfolio&Date"><img alt="Star History" src="https://api.star-history.com/svg?repos=Wagner-Schemmer/wagner-neo-portfolio&type=Date" /></a>
-
 ## CONFIGURAR O SISTEMA
 
 1. `Assets/images/` → fotos e prints dos seus projetos
