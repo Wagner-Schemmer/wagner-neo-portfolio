@@ -15,6 +15,11 @@ WAGNER.exe v2.0 — (c) 2026
 
 <a href="https://wagner-port.vercel.app"><img src="docs/preview.png" alt="screenshot do sistema" /></a>
 
+## SCREENSHOTS_DO_SISTEMA
+
+**Tela QUEM_SOU + TECH_STACK:**
+<a href="https://wagner-port.vercel.app"><img src="docs/port-quem-sou.png" alt="quem sou e tech stack" /></a>
+
 ## SYSTEM SPECS
 
 | Componente | Valor |
@@ -32,6 +37,16 @@ WAGNER.exe v2.0 — (c) 2026
 git clone https://github.com/Wagner-Schemmer/wagner-neo-portfolio.git
 npx serve .          # ou Go Live no VSCode
 ```
+
+## DRIVERS_INSTALADOS
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,js,py,git,vercel,vscode&theme=dark" alt="stack" />
+</div>
+
+## UPTIME (star history)
+
+<a href="https://www.star-history.com/#Wagner-Schemmer/wagner-neo-portfolio&Date"><img alt="Star History" src="https://api.star-history.com/svg?repos=Wagner-Schemmer/wagner-neo-portfolio&type=Date" /></a>
 
 ## CONFIGURAR O SISTEMA
 
